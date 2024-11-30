@@ -362,7 +362,8 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .header-area .navbar-nav li.dropdown-list > a::after {
+  .header-area .navbar-nav li.dropdown-list.with-sub > a::after {
+    line-height: 16px;
     position: relative;
     right: 0;
     top: 2px;

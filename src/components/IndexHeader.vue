@@ -1,9 +1,9 @@
 <script setup>
 import {onMounted} from "vue";
-import {useHeaderSticky} from "@/utils/common.js";
+import {useHeaderSticky} from "../../../11.30/src/utils/common.js";
 
 const routes=[
-  { name: '首页',routes:"/",children:[]},
+  { name: '首页',routes:"/"},
   { name: '课程列表',children:[
       { name:'购买课程',routes:''},
       { name:'充值会员',routes:''},
@@ -29,7 +29,7 @@ onMounted(useHeaderSticky)
         <!-- Navbar Brand -->
         <div class="mobile-menu">
           <a class="navbar-brand" href="index.html">
-            <img alt="Brand" src="@/assets/img/core-img/logo-2.png">
+            <img alt="Brand" src="../../../11.30/src/assets/img/core-img/logo-2.png">
           </a>
         </div>
 
@@ -43,7 +43,7 @@ onMounted(useHeaderSticky)
         <!-- Navbar -->
         <div id="navbarContent" class="collapse navbar-collapse">
           <ul id="SupportHiveNav" class="navbar-nav navbar-nav-scroll mb-3 mb-lg-0">
-            <li class="dropdown-list" v-for="item in routes">
+            <li class="dropdown-list" :class="{'with-sub':item.children}" v-for="item in routes">
               <a :href="item.children ? '#' : item.routes">{{ item.name  }}</a>
               <div class="dropdown-toggler" v-if="item.children"><i class="icon-down-arrow-1"></i></div>
               <ul v-if="item.children">
