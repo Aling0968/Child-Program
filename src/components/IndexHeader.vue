@@ -48,8 +48,8 @@ onMounted(useHeaderSticky)
               <div class="dropdown-toggler" v-if="item.children"><i class="icon-down-arrow-1"></i></div>
               <ul v-if="item.children">
                 <li v-for="sub in item.children">
-                  <a :href="sub.children">{{ sub.name  }}</a></li>
-
+                  <a :href="sub.routes">{{ sub.name  }}</a>
+                </li>
               </ul>
             </li>
           </ul>
