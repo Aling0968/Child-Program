@@ -2,62 +2,10 @@
 import {onMounted} from "vue";
 import {useHeaderSticky} from "@/utils/common.js";
 
+
 onMounted(useHeaderSticky)
 </script>
-
 <template>
-  <!--  <header id="header" class="header-area home-2 bg&#45;&#45;navy">-->
-  <!--    <nav class="navbar navbar-expand-lg">-->
-  <!--      <div class="container menu-area-">-->
-  <!--        &lt;!&ndash; Navbar Brand &ndash;&gt;-->
-  <!--        <div class="mobile-menu">-->
-  <!--          <a class="navbar-brand" href="index.html">-->
-  <!--            <img alt="Brand" src="@/assets/img/core-img/logo-2.png">-->
-  <!--          </a>-->
-  <!--        </div>-->
-
-  <!--        &lt;!&ndash; Navbar Toggler &ndash;&gt;-->
-  <!--        <button id="navbarToggler" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"-->
-  <!--                class="navbar-toggler" data-bs-target="#navbarContent" data-bs-toggle="collapse"-->
-  <!--                type="button">-->
-  <!--          <span class="icon-menu"></span>-->
-  <!--        </button>-->
-
-  <!--        &lt;!&ndash; Navbar &ndash;&gt;-->
-  <!--        <div id="navbarContent" class="collapse navbar-collapse">-->
-  <!--          <ul id="SupportHiveNav" class="navbar-nav navbar-nav-scroll mb-3 mb-lg-0">-->
-  <!--            <li class="dropdown-list" :class="{'with-sub':item.children}" v-for="item in routes" >-->
-  <!--              <a :href="item.children ? '#' : item.route">{{ item.name }}</a>-->
-  <!--              <div v-if="item.children" class="dropdown-toggler">-->
-  <!--                <i class="icon-down-arrow-1"></i>-->
-  <!--              </div>-->
-  <!--              <ul v-if="item.children">-->
-  <!--                <li v-for="sub in item.children">-->
-  <!--                  <a :href="sub.route">{{ sub.name }}</a>-->
-  <!--                </li>-->
-  <!--              </ul>-->
-  <!--            </li>-->
-  <!--          </ul>-->
-
-  <!--          <div class="cart-search-area ml-auto d-flex align-items-center">-->
-  <!--            <div class="search-home-2">-->
-  <!--              <div class="header-action">-->
-  <!--                <div class="search-toggle-open header-search">-->
-  <!--                  <div class="search-icon">-->
-  <!--                    <span class="icon-icon_search2"></span>-->
-  <!--                  </div>-->
-  <!--                </div>-->
-  <!--              </div>-->
-  <!--            </div>-->
-  <!--            <div class="cart-btn-area relative">-->
-  <!--              <a class="relative" href="#"><span class="icon-icon_cart_alt"></span></a>-->
-  <!--              <div class="cart-badge bg&#45;&#45;dark">0</div>-->
-  <!--            </div>-->
-  <!--          </div>-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--    </nav>-->
-  <!--  </header>-->
   <header id="header" class="header-area home-2 bg--navy">
     <nav class="navbar navbar-expand-lg">
       <div class="container menu-area-">
