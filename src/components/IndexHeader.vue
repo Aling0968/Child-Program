@@ -5,7 +5,7 @@ import {useHeaderSticky} from "../../../11.30/src/utils/common.js";
 const routes=[
   { name: '首页',routes:"/"},
   { name: '课程列表',children:[
-      { name:'购买课程',routes:''},
+      { name:'购买课程',routes:'/course/list'},
       { name:'充值会员',routes:''},
     ]
   },
