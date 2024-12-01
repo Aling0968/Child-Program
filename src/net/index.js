@@ -1,4 +1,7 @@
 import axios from "axios";
+import {clearToken, getToken} from "@/utils/token.js";
+import Swal from "sweetalert2";
+import router from "@/router/index.js";
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 // 创建axios实例
@@ -9,3 +12,28 @@ const request = axios.create({
     timeout: 10000
 })
 export default request
+
+request.interceptors.request.use(config => {
+    const token=getToken()
+    if(token)
+    {
+        config.headers['Authorization'] = 'Bearer ' + token
+    }
+    return config
+})
+request.interceptors.response.use(res=> {
+    const code = res.data.code
+    if(code===401)
+    {
+        clearToken()
+        Swal.fire({
+            title: "登录已过期!",
+            text: "您的登录已过期，请重新登录!",
+            icon: "warning"
+        }).then(() => {
+            router.push('/login')
+        })
+        return Promise.reject('无效的会话，或者会话已过期，请重新登录。')
+    }
+    return res
+})

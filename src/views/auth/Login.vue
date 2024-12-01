@@ -1,6 +1,9 @@
 <script setup>
 import {onMounted, reactive} from "vue";
 import request from "@/net";
+import Swal from "sweetalert2";
+import router from "@/router/index.js";
+import {setToken} from "@/utils/token.js";
 
 const verify = reactive({
   img: '',
@@ -21,9 +24,22 @@ function login() {
   }).then(({data}) => {
     if (data.code !== 200) {
       refreshImage()
-      console.info('登录失败')
+     // console.info('登录失败')
+      Swal.fire({
+        title: "登录失败!",
+        text: "请检查您的账号或者密码是否正确",
+        icon: "error"
+      });
     } else {
-      console.info('登录成功', data)
+     // console.info('登录成功', data)
+      Swal.fire({
+        title: "恭喜你",
+        text: "登录成功了!",
+        icon: "success"
+      }).then(()=> {
+        setToken(data.token)
+        router.push('/')
+      })
     }
   })
 }
@@ -62,7 +78,7 @@ onMounted(refreshImage)
               </div>
               <div class="row">
                 <div class="form-floating mb-5 col-8">
-                  <input id="floatingInput1" v-model="form.code" class="form-control"
+                  <input id="floatingInput3" v-model="form.code" class="form-control"
                          placeholder="Username Or Email address *" type="email">
                   <label class="lable-text" for="floatingInput1">验证码 *</label>
                 </div>
