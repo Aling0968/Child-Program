@@ -23,6 +23,11 @@ const router = createRouter({
                     name: 'course-grid',
                     component: () => import('@/views//course/CourseGrid.vue'),
                 },
+                {
+                    path: 'detail/:id',
+                    name: 'course-detail',
+                    component: () => import('@/views//course/CourseDetail.vue'),
+                },
 
             ]
         }

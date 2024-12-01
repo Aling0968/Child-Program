@@ -4,10 +4,10 @@ import axios from "axios";
 import {ref} from "vue";
 import {CreateRandomInt} from "@/utils/data.js";
 import CourseBreadcrumb from "@/components/course/CourseBreadcrumb.vue";
+import request from "@/net"
 const data = ref([])
-axios.get('http://localhost:8080/system/course/list').then((res) => {
-  data.value = res.data.rows
-})
+request.get('/system/course/list')
+    .then((res) => data.value = res.data.rows)
 </script>
 
 <template>

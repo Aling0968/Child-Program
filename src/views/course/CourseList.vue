@@ -5,12 +5,11 @@ import axios from "axios";
 import {ref} from "vue";
 import {CreateRandomInt} from "@/utils/data.js";
 import CourseBreadcrumb from "@/components/course/CourseBreadcrumb.vue";
-
+import request from "@/net"
 
 const data = ref([])
-axios.get('http://localhost:8080/system/course/list').then((res) => {
-  data.value = res.data.rows
-})
+request.get('/system/course/list')
+    .then((res) => data.value = res.data.rows)
 </script>
 
 <template>
@@ -49,7 +48,7 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
                     <i class="icon-icon_ribbon_alt"></i>
                   </div>
                 </div>
-                <h2><a href="course-details.html">{{course.title}}</a></h2>
+                <h2><a :href="`/course/detail/${course.id}`">{{course.title}}</a></h2>
                 <!-- info -->
                 <div class="course-info-meta-4 d-flex align-items-center">
                   <p><i class="icon-Home"></i> {{CreateRandomInt()}}人正在学习</p>
