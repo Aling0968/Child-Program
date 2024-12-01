@@ -24,11 +24,11 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
             <div class="course-card-4-area course-list d-flex ">
               <div class="course-img-4 single">
                 <div class="cr-img relative">
-                  <img src="@/assets/img/bg-img/inner/list-1.png" alt="">
+                  <img src="/img/bg-img/inner/list-1.png" alt="">
 
                   <div class="course-offer-4">
                     <div class="offer-bg-shape relative">
-                      <img src="@/assets/img/bg-img/home-4/shape-4.png" alt="">
+                      <img src="/img/bg-img/home-4/shape-4.png" alt="">
                     </div>
 
                     <div class="offer-content-4 ">
@@ -58,7 +58,7 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
 
                 <p class="course-desc-4">{{course.about}}</p>
                 <div class="auth-info-4 d-flex align-items-center">
-                  <img class="auth-img" src="@/assets/img/bg-img/home-4/c-2.png" alt="">
+                  <img class="auth-img" src="/img/bg-img/home-4/c-2.png" alt="">
                   <p>主讲老师:<a href="#">{{course.teacher}}</a></p>
                 </div>
                 <!-- Price & Cart -->
@@ -81,7 +81,7 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
             <div class="course-card-4-area course-list d-flex ">
               <div class="course-img-4 single">
                 <div class="cr-img relative">
-                  <img src="@/assets/img/bg-img/inner/list-2.jpg" alt="">
+                  <img src="/img/bg-img/inner/list-2.jpg" alt="">
                 </div>
               </div>
 
@@ -104,7 +104,7 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
                   cover
                   interesting.</p>
                 <div class="auth-info-4 d-flex align-items-center">
-                  <img class="auth-img" src="@/assets/img/bg-img/home-4/c-2.png" alt="">
+                  <img class="auth-img" src="/img/bg-img/home-4/c-2.png" alt="">
                   <p>By <a href="#">jane cooper</a></p>
                 </div>
                 <!-- Price & Cart -->
@@ -128,7 +128,7 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
             <div class="course-card-4-area course-list d-flex ">
               <div class="course-img-4 single">
                 <div class="cr-img relative">
-                  <img src="@/assets/img/bg-img/inner/list-3.png" alt="">
+                  <img src="/img/bg-img/inner/list-3.png" alt="">
                 </div>
               </div>
 
@@ -151,7 +151,7 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
                   cover
                   interesting.</p>
                 <div class="auth-info-4 d-flex align-items-center">
-                  <img class="auth-img" src="@/assets/img/bg-img/home-4/c-2.png" alt="">
+                  <img class="auth-img" src="/img/bg-img/home-4/c-2.png" alt="">
                   <p>By <a href="#">jane cooper</a></p>
                 </div>
                 <!-- Price & Cart -->

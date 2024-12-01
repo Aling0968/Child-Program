@@ -7,17 +7,17 @@
     <!-- Shape -->
     <div class="f-shape-1 wow fadeInUp" data-wow-delay="900ms"
          style="visibility: hidden; animation-delay: 900ms; animation-name: none;">
-      <img alt="" src="@/assets/img/bg-img/f-shap-1.png">
+      <img alt="" src="/img/bg-img/f-shap-1.png">
     </div>
     <!-- Shape -->
     <div class="f-shape-2 wow fadeInRight" data-wow-delay="700ms"
          style="visibility: hidden; animation-delay: 700ms; animation-name: none;">
-      <img alt="" src="@/assets/img/bg-img/f-shap-2.png">
+      <img alt="" src="/img/bg-img/f-shap-2.png">
     </div>
     <!-- Shape -->
     <div class="f-shape-3 wow fadeInRight" data-wow-delay="500ms"
          style="visibility: hidden; animation-delay: 500ms; animation-name: none;">
-      <img alt="" src="@/assets/img/bg-img/f-shape-3.png">
+      <img alt="" src="/img/bg-img/f-shape-3.png">
     </div>
     <div class="footer-content">
       <div class="container">
@@ -25,7 +25,7 @@
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="me-4">
               <a class="mb-4 d-block footer-logo" href="#">
-                <img alt="" src="@/assets/img/core-img/logo-2.png">
+                <img alt="" src="/img/core-img/logo-2.png">
               </a>
               <p class="footer-desc">超过 18,000+ 小朋友在我们这里学习编程！</p>
 
