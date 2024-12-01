@@ -28,7 +28,7 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
                   <h6>主讲老师:{{course.teacher}}</h6>
                 </div>
                 <div class="course-title-img">
-                  <img src="/img/bg-img/home-4/c-1.png" alt="">
+                  <img :src="`/img/course/teacher/c-${course.id}.png`" alt="">
                 </div>
                 <!-- Shape -->
                 <div class="course-shape-4">
@@ -41,7 +41,7 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
                   </div>
                   <div class="offer-content-4 ">
                     <p>-10%</p>
-                    <span>Off</span>
+                    <span>折扣</span>
                   </div>
 
                 </div>
@@ -62,7 +62,8 @@ axios.get('http://localhost:8080/system/course/list').then((res) => {
                 <h2><a href="course-details.html">{{course.title}}</a></h2>
                 <p class="course-desc-4">{{course.about}}</p>
                 <div class="auth-info-4 d-flex align-items-center">
-                  <img class="auth-img" src="/img/bg-img/home-4/c-2.png" alt="">
+
+                  <img class="auth-img" :src="`/img/course/avatar/c-${course.id}.png`" alt="">
                   <p>主讲老师:<a href="#">{{course.teacher}}</a></p>
                 </div>
                 <!-- Price & Cart -->
