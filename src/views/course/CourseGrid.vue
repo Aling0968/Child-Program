@@ -5,9 +5,23 @@ import {ref} from "vue";
 import {CreateRandomInt} from "@/utils/data.js";
 import CourseBreadcrumb from "@/components/course/CourseBreadcrumb.vue";
 import request from "@/net"
+import Swal from "sweetalert2";
+import {useAccount} from "@/stores/user.js";
 const data = ref([])
+const account =useAccount()
 request.get('/system/course/list')
     .then((res) => data.value = res.data.rows)
+function addCourseToCart(id){
+  request.post(`/system/item/add/${id}`).then(() =>{
+    // request.post(`/system/course/add/${id}`).then(( {data} ) =>
+    // console.log(data));
+    account.cart.count++
+    Swal.fire({
+      title: "添加商品",
+      text: " 课程成功添加到购物车，欢迎继续选购!",
+      icon: "success"})
+  })
+}
 </script>
 
 <template>
@@ -71,8 +85,8 @@ request.get('/system/course/list')
                   <div class="course-price">
                     <p>￥{{(course.price*0.9).toFixed(0)}}<span>￥{{course.price}}</span></p>
                   </div>
-                  <div class="course-buy">
-                    <p><a href="#"><i class="icon-icon_cart_alt"></i> <span>添加到购物车</span></a>
+                  <div class="course-buy" style="cursor: pointer">
+                    <p><a @click="addCourseToCart(course.id)"><i class="icon-icon_cart_alt"></i> <span>加到购物车</span></a>
                     </p>
                   </div>
                 </div>

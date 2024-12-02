@@ -1,7 +1,8 @@
 <script setup>
 import {onMounted} from "vue";
 import {useHeaderSticky} from "../../../11.30/src/utils/common.js";
-
+import {useAccount} from "@/stores/user.js";
+const account=useAccount()
 const routes=[
   { name: '首页',routes:"/"},
   { name: '课程列表',children:[
@@ -66,7 +67,7 @@ onMounted(useHeaderSticky)
             </div>
             <div class="cart-btn-area relative">
               <a class="relative" href="#"><span class="icon-icon_cart_alt"></span></a>
-              <div class="cart-badge bg--dark">0</div>
+              <div class="cart-badge bg--dark">{{account.cart.count}}</div>
             </div>
           </div>
         </div>

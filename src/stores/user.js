@@ -7,10 +7,14 @@ export const useAccount=defineStore('account',()=>{
         userName:'',
         nickName:'',
         email:'',
-
         })
+
+    const cart=ref({
+        count:0
+    })
+
      return{
-        info
+        info,cart
      }
 
 })

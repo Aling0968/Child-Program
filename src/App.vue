@@ -18,9 +18,8 @@ const isAuthPage= computed(
 onMounted(() =>{
   if(getToken())
   {
-    request.get('/getInfo').then(({data})=>
-      //console.info(data)
-      Object.assign(account.info,data.user))
+    request.get('/getInfo').then(({data})=> Object.assign(account.info,data.user))
+    request.get('/system/item/count').then(({data})=> account.cart.count=data.data)
   }
 })
 </script>
