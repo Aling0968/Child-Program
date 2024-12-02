@@ -97,6 +97,11 @@ onMounted(refreshImage)
                     记住我
                   </label>
                 </div>
+                  <div class="forgot-pass" >
+                    <a href="/register">还没有账号?立即注册</a>
+                  </div>
+
+
 
 
               </div>
