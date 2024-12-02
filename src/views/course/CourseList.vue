@@ -10,6 +10,13 @@ import request from "@/net"
 const data = ref([])
 request.get('/system/course/list')
     .then((res) => data.value = res.data.rows)
+
+function addCourseToCart(id){
+  request.post(`/system/item/add/${id}`)
+  // request.post(`/system/course/add/${id}`).then(( {data} ) =>
+  // console.log(data));
+}
+
 </script>
 
 <template>
@@ -66,7 +73,7 @@ request.get('/system/course/list')
                     <p>￥{{(course.price*0.9).toFixed(0)}}<span>￥{{course.price}}</span></p>
                   </div>
                   <div class="course-buy">
-                    <p><a href="#"><i class="icon-icon_cart_alt"></i> <span>添加到购物车</span></a>
+                    <p><a @click="addCourseToCart(course.id)"><i class="icon-icon_cart_alt"></i> <span>添加到购物车</span></a>
                     </p>
                   </div>
                 </div>

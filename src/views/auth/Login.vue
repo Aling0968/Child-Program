@@ -4,7 +4,8 @@ import request from "@/net";
 import Swal from "sweetalert2";
 import router from "@/router/index.js";
 import {setToken} from "@/utils/token.js";
-
+import {useAccount} from "@/stores/user.js";
+const account=useAccount()
 const verify = reactive({
   img: '',
   uuid: ''
@@ -38,6 +39,8 @@ function login() {
         icon: "success"
       }).then(()=> {
         setToken(data.token)
+        request.get('/getInfo').then(({data})=>
+          Object.assign(account.info,data.user))
         router.push('/')
       })
     }

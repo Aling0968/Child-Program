@@ -4,11 +4,25 @@ import IndexHeader from "@/components/IndexHeader.vue";
 import IndexFooter from "@/components/IndexFooter.vue";
 import BackToTop from "@/components/BackToTop.vue";
 import {useRoute} from "vue-router";
-import {computed} from "vue";
+import {computed, onMounted} from "vue";
+import request from "@/net/index.js";
+import {getToken} from "@/utils/token.js";
+import {useAccount} from "@/stores/user.js";
 
 
 const route=useRoute()
-const isAuthPage= computed(() => route.name==='login'||route.name==='register')
+const account=useAccount()
+
+const isAuthPage= computed(
+    () => route.name==='login'||route.name==='register')
+onMounted(() =>{
+  if(getToken())
+  {
+    request.get('/getInfo').then(({data})=>
+      //console.info(data)
+      Object.assign(account.info,data.user))
+  }
+})
 </script>
 
 <template>
